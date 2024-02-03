@@ -1,7 +1,7 @@
 "use client";
 
 import { Layout } from "antd";
-import { MainHeader } from "../components/MainHeader/MainHeader";
+import { MainHeader } from "@/components";
 
 const { Header } = Layout;
 
