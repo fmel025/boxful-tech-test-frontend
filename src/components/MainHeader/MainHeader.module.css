@@ -1,0 +1,9 @@
+.header {
+    background-color: white !important;
+    display: flex;
+    align-items: center;
+  }
+
+.divider {
+    height: 70% !important;
+}

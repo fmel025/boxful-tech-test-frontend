@@ -1,10 +1,14 @@
-import { Button } from 'antd';
+"use client";
+
+import { Layout } from "antd";
+import { MainHeader } from "../components/MainHeader/MainHeader";
+
+const { Header } = Layout;
 
 export default function Home() {
   return (
-    <div>
-      <h1>Welcome to My Next.js App with Ant Design Theme</h1>
-      <Button type="primary">Click me!</Button>
-    </div>
+    <Layout>
+      <MainHeader />
+    </Layout>
   );
 }

@@ -1,1 +1,1 @@
-export * from './BoxfulLogo/BoxfulLogo';
+export * from './MainHeader/MainHeader';

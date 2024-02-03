@@ -3,6 +3,10 @@ import React from "react";
 export function BoxfulLogo() {
   return (
     <svg
+      style={{
+        paddingRight: "20px",
+        marginRight: "30px",
+      }}
       width="107"
       height="23"
       viewBox="0 0 107 23"
