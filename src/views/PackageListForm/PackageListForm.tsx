@@ -10,6 +10,7 @@ import { useState } from "react";
 import PackageInputs from "./components/PackageInputs/PackageInputs";
 import { v4 } from "uuid";
 import { Package } from "@/interfaces/package.interface";
+import PackageList from "./components/PackageList/PackageList";
 
 export default function PackageListForm({
   initialPackages,
@@ -58,7 +59,9 @@ export default function PackageListForm({
       </Form>
 
       {/* Package List */}
-
+      {packages.map((item: PackageItem) => (
+        <PackageList key={item.id} item={item} />
+      ))}
       {/* Navigation buttons */}
       <Flex className="btn-group" justify="space-between">
         <Button

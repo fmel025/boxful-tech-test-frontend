@@ -57,3 +57,13 @@
     font-size: 12px !important;
     color: #7682A0 !important;
   }
+
+  .package-list {
+    margin-top: 10px !important;
+    background-color: #FFF;
+    border-width: 1px;
+    border-style: solid;
+    border-color: #3EBF5B !important;
+    border-radius: 10px !important;
+    padding: 20px !important;
+  }
