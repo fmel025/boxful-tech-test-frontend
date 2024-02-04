@@ -1,6 +1,6 @@
 export interface Details {
   collectingAddress: string;
-  date: Date;
+  date: moment.Moment | string | Date;
   names: string;
   lastnames: string;
   email: string;

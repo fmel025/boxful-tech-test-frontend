@@ -1,10 +1,10 @@
 import { Details } from "@/interfaces/details.interface";
 import { PackageItem } from "@/interfaces/package-item.interface";
+import moment from "moment";
 
 export const initialDetails: Details = {
   city: "",
   collectingAddress: "",
-  date: new Date(),
   email: "",
   indications: "",
   lastnames: "",
@@ -13,6 +13,7 @@ export const initialDetails: Details = {
   recipientAddress: "",
   reference: "",
   state: "",
+  date: "",
 };
 
 export const initialPackagesData: PackageItem[] = [];
