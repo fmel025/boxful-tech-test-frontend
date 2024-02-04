@@ -7,6 +7,8 @@ import { State } from "@/interfaces/state.interface";
 import { fetchStates } from "@/services";
 import { IndicationsInput } from "./components/IndicationsInput";
 import { PersonalDataInputs } from "./components/PersonalDataInputs";
+import { PhoneAndAddressInputs } from "./components/PhoneAndAddress/PhoneAndAddressInputs";
+import { ArrowRightOutlined } from "@ant-design/icons";
 
 export default function DetailsForm({
   initialData,
@@ -38,11 +40,15 @@ export default function DetailsForm({
         onFinish={(data) => console.log(data)}
         initialValues={initialData}
       >
-        <PersonalDataInputs/> 
+        <PersonalDataInputs />
+        <PhoneAndAddressInputs />
         {states.length > 0 && <StateSelector states={states} />}
         <IndicationsInput />
         <Flex justify="flex-end">
-          <Button type="primary" htmlType="submit">Siguiente</ Button>
+          <Button size="large" className="btn" type="primary" htmlType="submit">
+            <span>Siguiente </span>
+            <ArrowRightOutlined  />
+          </Button>
         </Flex>
       </Form>
     </>
