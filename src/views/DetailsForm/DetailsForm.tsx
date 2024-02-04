@@ -1,13 +1,20 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Details } from "../../interfaces/details.interface";
+import { Form, Input, DatePicker } from "antd";
+import "./Details.css";
+
 export default function DetailsForm({
   initialData,
   onSubmit,
 }: {
   initialData: Details;
-  onSubmit: Function;
+  onSubmit: any;
 }) {
-  const [details, setDetails] = useState<Details>(initialData);
-
-  return <div>DetailsForm</div>;
+  return (
+    <>
+      <Form className="form" onFinish={onSubmit} initialValues={initialData}>
+        a
+      </Form>
+    </>
+  );
 }
