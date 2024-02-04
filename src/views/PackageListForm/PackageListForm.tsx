@@ -1,43 +1,71 @@
 import { Button, Flex, Form } from "antd";
 import "./PackageListForm.css";
-import { ArrowRightOutlined, ArrowLeftOutlined } from "@ant-design/icons";
+import {
+  ArrowRightOutlined,
+  ArrowLeftOutlined,
+  PlusOutlined,
+} from "@ant-design/icons";
 import { PackageItem } from "@/interfaces/package-item.interface";
 import { useState } from "react";
 import PackageInputs from "./components/PackageInputs/PackageInputs";
+import { v4 } from "uuid";
+import { Package } from "@/interfaces/package.interface";
 
 export default function PackageListForm({
   initialPackages,
   onSubmit,
-  onPrevStepClick
+  onPrevStepClick: handlePreviousClick,
 }: {
-  initialPackages: PackageItem[],
-  onSubmit: Function,
-  onPrevStepClick: Function
+  initialPackages: PackageItem[];
+  onSubmit: Function;
+  onPrevStepClick: Function;
 }) {
   const [form] = Form.useForm();
 
-
   const [packages, setPackages] = useState<PackageItem[]>(initialPackages);
 
-  const handleOnFinish = (data: object) => {
-    console.log(packages);
-    console.log(data);
+  const addNewPackage = (data: Package) => {
+    const packageAdded: PackageItem = {
+      ...data,
+      id: v4(),
+    };
+    form.resetFields();
+    setPackages((packages) => [...packages, packageAdded]);
   };
 
   const handleGoPreviousPage = () => {
-    onPrevStepClick(packages);
-  }
+    handlePreviousClick(packages);
+  };
 
   return (
     <div className="container">
       <p className="text-container">Agrega tus bultos</p>
-      <Form layout="vertical" className="package-form" form={form} onFinish={handleOnFinish}>
+
+      {/* Main form */}
+      <Form
+        layout="vertical"
+        className="package-form"
+        form={form}
+        onFinish={addNewPackage}
+      >
         <PackageInputs />
+        <Flex justify="flex-end">
+          <Button size="large" className="btn-add" htmlType="submit">
+            <span className="text-sm">Agregar</span>
+            <PlusOutlined />
+          </Button>
+        </Flex>
       </Form>
-      
+
+      {/* Package List */}
+
       {/* Navigation buttons */}
       <Flex className="btn-group" justify="space-between">
-        <Button size="large" className="btn-back" onClick={handleGoPreviousPage}>
+        <Button
+          size="large"
+          className="btn-back"
+          onClick={handleGoPreviousPage}
+        >
           <ArrowLeftOutlined />
           <span>Anterior </span>
         </Button>
