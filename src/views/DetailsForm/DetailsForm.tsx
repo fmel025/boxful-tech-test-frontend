@@ -1,11 +1,12 @@
 import { useEffect, useState } from "react";
 import { Details } from "../../interfaces/details.interface";
-import { Form, Input, DatePicker } from "antd";
+import { Form, Input, DatePicker, Flex, Button } from "antd";
 import "./Details.css";
 import { StateSelector } from "./components/StateSelector";
 import { State } from "@/interfaces/state.interface";
 import { fetchStates } from "@/services";
 import { IndicationsInput } from "./components/IndicationsInput";
+import { PersonalDataInputs } from "./components/PersonalDataInputs";
 
 export default function DetailsForm({
   initialData,
@@ -34,11 +35,15 @@ export default function DetailsForm({
       <Form
         layout="vertical"
         className="form"
-        onFinish={onSubmit}
+        onFinish={(data) => console.log(data)}
         initialValues={initialData}
       >
+        <PersonalDataInputs/> 
         {states.length > 0 && <StateSelector states={states} />}
         <IndicationsInput />
+        <Flex justify="flex-end">
+          <Button type="primary" htmlType="submit">Siguiente</ Button>
+        </Flex>
       </Form>
     </>
   );
