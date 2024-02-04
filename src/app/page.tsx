@@ -5,15 +5,18 @@ import { MainHeader } from "@/components";
 import { useState } from "react";
 import DetailsForm from "@/views/DetailsForm/DetailsForm";
 import PackageListForm from "@/views/PackageListForm/PackageListForm";
+import { Details } from "@/interfaces/details.interface";
+import { initialDetails } from "@/constants/default-values";
 
 const { Content } = Layout;
 
 export default function Home() {
   const [step, setStep] = useState<number>(1);
-  const [details, setDetails] = useState();
+  const [details, setDetails] = useState<Details>(initialDetails);
 
-  const onNextStepClick = (details) => {
-    setDetails(details);
+  const onNextStepClick = (formData: object) => {
+    console.log(formData);
+    setDetails(details => ({...details, ...formData}));
     setStep((step) => step + 1);
   };
 
