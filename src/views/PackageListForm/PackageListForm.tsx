@@ -38,6 +38,11 @@ export default function PackageListForm({
     handlePreviousClick(packages);
   };
 
+  const handleDelete = (id: string) => {
+    const filteredPackages = packages.filter((p) => p.id !== id);
+    setPackages(filteredPackages);
+  };
+
   return (
     <div className="container">
       <p className="text-container">Agrega tus bultos</p>
@@ -60,7 +65,11 @@ export default function PackageListForm({
 
       {/* Package List */}
       {packages.map((item: PackageItem) => (
-        <PackageList key={item.id} item={item} />
+        <PackageList
+          key={item.id}
+          item={item}
+          handleDelete={() => handleDelete(item.id)}
+        />
       ))}
       {/* Navigation buttons */}
       <Flex className="btn-group" justify="space-between">

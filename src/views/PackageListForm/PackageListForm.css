@@ -40,13 +40,24 @@
     color: #7682A0 !important;
   }
 
+  .btn-group {
+    margin-top: 40px !important;
+  }
+
+  .btn-delete {
+    color: red !important;
+    border: 0 transparent !important;
+  }
+
+  .icon-delete {
+    font-size: 16px !important;
+  }
+
   .text-sm {
     font-size: 14px !important;
   }
 
-  .btn-group {
-    margin-top: 40px !important;
-  }
+  
 
   .text-container {
     color: #7682A0;
