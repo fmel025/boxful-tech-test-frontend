@@ -9,7 +9,7 @@ export const initialDetails: Details = {
   indications: "",
   lastnames: "",
   names: "",
-  phone: "",
+  phone: "+ 503 ",
   recipientAddress: "",
   reference: "",
   state: "",
