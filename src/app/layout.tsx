@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
 import { AntdRegistry } from "@ant-design/nextjs-registry";
-import { Inter } from "next/font/google";
+import { Albert_Sans } from "next/font/google";
 import "./globals.css";
 
-const inter = Inter({ subsets: ["latin"] });
+const albert = Albert_Sans({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "Boxful app",
@@ -17,7 +17,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="es">
-      <body className={inter.className}>
+      <body className={albert.className}>
         <AntdRegistry>{children}</AntdRegistry>
       </body>
     </html>
