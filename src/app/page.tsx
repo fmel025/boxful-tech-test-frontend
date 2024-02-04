@@ -9,11 +9,14 @@ import { Details } from "@/interfaces/details.interface";
 import { initialDetails } from "@/constants/default-values";
 import { PackageItem } from "@/interfaces/package-item.interface";
 import toast from "react-hot-toast";
+import { Order } from "@/interfaces/order.interface";
+import { orderMapper } from "@/utils/order-mapper";
+import { postOrder } from "@/services/orderService";
 
 const { Content } = Layout;
 
 export default function Home() {
-  const [step, setStep] = useState<number>(2);
+  const [step, setStep] = useState<number>(1);
   const [details, setDetails] = useState<Details>(initialDetails);
   const [packages, setPackages] = useState<PackageItem[]>([]);
 
@@ -32,8 +35,18 @@ export default function Home() {
     if (packages.length === 0)
       return toast.error("Debes agregar al menos un paquete");
 
-    
-    setStep((step) => step - 1);
+    const order: Order = orderMapper(details, packages);
+
+    try {
+      await postOrder(order);
+      setDetails(initialDetails);
+      setPackages([]);
+      setStep((step) => step - 1);
+      toast.success("La orden se envio exitosamente!");
+    } catch (error) {
+      toast.error("Network error");
+      console.log(error);
+    }
   };
 
   return (
