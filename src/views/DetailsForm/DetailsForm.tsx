@@ -1,7 +1,5 @@
-import React from 'react'
+import React from "react";
 
-export default function DetailsForm() {
-  return (
-    <div>DetailsForm</div>
-  )
+export default function DetailsForm({ initialData, onSubmit }) {
+  return <div>DetailsForm</div>;
 }

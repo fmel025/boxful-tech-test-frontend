@@ -2,14 +2,24 @@
 
 import { Layout } from "antd";
 import { MainHeader } from "@/components";
-import { useForm } from "antd/es/form/Form";
 import { useState } from "react";
+import DetailsForm from "@/views/DetailsForm/DetailsForm";
+import PackageListForm from "@/views/DetailsForm/PackageListForm";
 
 const { Content } = Layout;
 
 export default function Home() {
-  const [form] = useForm();
   const [step, setStep] = useState<number>(1);
+  const [details, setDetails] = useState();
+
+  const onNextStepClick = (details) => {
+    setDetails(details);
+    setStep((step) => step + 1);
+  };
+
+  const onPrevStepClick = () => {
+    setStep((step) => step - 1);
+  };
 
   return (
     <Layout>
@@ -21,8 +31,11 @@ export default function Home() {
             Dale una ventaja competitiva a tu negocio con entregas el mismo día
             (Área Metropolitana) y el día siguiente a nivel nacional.
           </p>
+          {step === 1 && (
+            <DetailsForm initialData={details} onSubmit={onNextStepClick} />
+          )}
+          {step === 2 && <PackageListForm />}
         </div>
-        
       </Content>
     </Layout>
   );
