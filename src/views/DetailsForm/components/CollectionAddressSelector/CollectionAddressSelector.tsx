@@ -16,6 +16,7 @@ export default function CollectionAddressSelector() {
         >
           <Select
             defaultActiveFirstOption={true}
+            size="large"
             options={collectingAddresses.map((address) => ({
               label: address,
               value: address,

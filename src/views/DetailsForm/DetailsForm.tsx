@@ -9,6 +9,7 @@ import { IndicationsInput } from "./components/IndicationsInput/IndicationsInput
 import { PersonalDataInputs } from "./components/PersonalDataInputs/PersonalDataInputs";
 import { PhoneAndAddressInputs } from "./components/PhoneAndAddress/PhoneAndAddressInputs";
 import { ArrowRightOutlined } from "@ant-design/icons";
+import CollectionAndDate from "./components/CollectionAndDate/CollectionAndDate";
 
 export default function DetailsForm({
   initialData,
@@ -22,8 +23,20 @@ export default function DetailsForm({
   useEffect(() => {
     const getData = async () => {
       try {
-        const states: State[] = await fetchStates();
-        setStates(states);
+        const fetchedStates: State[] = await fetchStates();
+        setStates(fetchedStates);
+        const allCollectionPoints = fetchedStates.reduce(
+          (accumulator: string[], state) => {
+            return [...accumulator, ...state.collectionPoints];
+          },
+          []
+        );
+
+        // To avoid prop drilling (also Context could be used)
+        sessionStorage.setItem(
+          "collectionPoints",
+          JSON.stringify(allCollectionPoints)
+        );
       } catch (error) {
         console.log("Network error: ", error);
       }
@@ -40,6 +53,7 @@ export default function DetailsForm({
         onFinish={(data) => console.log(data)}
         initialValues={initialData}
       >
+        {states.length > 0 && <CollectionAndDate />}
         <PersonalDataInputs />
         <PhoneAndAddressInputs />
         {states.length > 0 && <StateSelector states={states} />}
@@ -47,7 +61,7 @@ export default function DetailsForm({
         <Flex justify="flex-end">
           <Button size="large" className="btn" type="primary" htmlType="submit">
             <span>Siguiente </span>
-            <ArrowRightOutlined  />
+            <ArrowRightOutlined />
           </Button>
         </Flex>
       </Form>

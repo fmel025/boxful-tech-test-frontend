@@ -8,7 +8,7 @@ export function IndicationsInput() {
       label="Indicaciones"
       rules={[{ required: true, message: "" }]}
     >
-      <Input placeholder="Ingrese las indicaciones para el momento de entrega" />
+      <Input size="large" placeholder="Ingrese las indicaciones para el momento de entrega" />
     </Form.Item>
   );
 }
