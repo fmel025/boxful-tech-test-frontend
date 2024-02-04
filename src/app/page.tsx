@@ -4,7 +4,7 @@ import { Layout } from "antd";
 import { MainHeader } from "@/components";
 import { useState } from "react";
 import DetailsForm from "@/views/DetailsForm/DetailsForm";
-import PackageListForm from "@/views/DetailsForm/PackageListForm";
+import PackageListForm from "@/views/PackageListForm/PackageListForm";
 
 const { Content } = Layout;
 
