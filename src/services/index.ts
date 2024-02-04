@@ -1,1 +1,1 @@
-export * from './stateService';
+export * from './state-service';

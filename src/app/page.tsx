@@ -11,7 +11,7 @@ import { PackageItem } from "@/interfaces/package-item.interface";
 import toast from "react-hot-toast";
 import { Order } from "@/interfaces/order.interface";
 import { orderMapper } from "@/utils/order-mapper";
-import { postOrder } from "@/services/orderService";
+import { postOrder } from "@/services/order-service";
 
 const { Content } = Layout;
 
