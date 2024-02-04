@@ -8,6 +8,7 @@ import PackageListForm from "@/views/PackageListForm/PackageListForm";
 import { Details } from "@/interfaces/details.interface";
 import { initialDetails } from "@/constants/default-values";
 import { PackageItem } from "@/interfaces/package-item.interface";
+import toast from "react-hot-toast";
 
 const { Content } = Layout;
 
@@ -27,7 +28,11 @@ export default function Home() {
     setStep((step) => step - 1);
   };
 
-  const handleSubmit = (packages: PackageItem[]) => {
+  const handleSubmit = async (packages: PackageItem[]) => {
+    if (packages.length === 0)
+      return toast.error("Debes agregar al menos un paquete");
+
+    
     setStep((step) => step - 1);
   };
 

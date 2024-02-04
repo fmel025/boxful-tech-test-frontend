@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { AntdRegistry } from "@ant-design/nextjs-registry";
 import { Albert_Sans } from "next/font/google";
 import "./globals.css";
+import { Toaster } from "react-hot-toast";
 
 const albert = Albert_Sans({ subsets: ["latin"] });
 
@@ -18,6 +19,7 @@ export default function RootLayout({
   return (
     <html lang="es">
       <body className={albert.className}>
+        <Toaster position="bottom-left" reverseOrder={false} />
         <AntdRegistry>{children}</AntdRegistry>
       </body>
     </html>
