@@ -2,7 +2,7 @@ import { Details } from "@/interfaces/details.interface";
 import { PackageItem } from "@/interfaces/package-item.interface";
 
 export const initialDetails: Details = {
-  city: "",
+  city: "Ahuachapán",
   collectingAddress: "",
   date: new Date(),
   email: "",
@@ -12,7 +12,7 @@ export const initialDetails: Details = {
   phone: "",
   recipientAddress: "",
   reference: "",
-  state: "",
+  state: "Ahuachapán",
 };
 
 export const initialPackagesData: PackageItem[] = [];
