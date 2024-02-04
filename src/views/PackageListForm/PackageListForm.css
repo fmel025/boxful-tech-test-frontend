@@ -33,6 +33,17 @@
     color: #7682A0 !important;
   }
 
+  .btn-add {
+    display: flex !important;
+    align-items: center;
+    background-color: #E1E4EC !important;
+    color: #7682A0 !important;
+  }
+
+  .text-sm {
+    font-size: 14px !important;
+  }
+
   .btn-group {
     margin-top: 40px !important;
   }
