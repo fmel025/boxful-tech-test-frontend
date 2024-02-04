@@ -1,0 +1,15 @@
+.full_width {
+    width: 100% !important;
+}
+
+.flex {
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+}
+
+.icon {
+    width: 30px;
+    height: 30px;
+    color: #ACB3C5;
+}

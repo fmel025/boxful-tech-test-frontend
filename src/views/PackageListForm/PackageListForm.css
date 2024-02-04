@@ -1,0 +1,80 @@
+.container {
+    padding: 60px 40px 15px !important;
+    background-color: #FFF;
+    margin-top: 20px !important;
+    border-radius: 10px;
+  }
+
+.package-form {
+  margin-top: 10px !important;
+  background-color: #F3F5F9;
+  border-radius: 10px !important;
+  padding: 20px !important;
+}
+
+  .btn-send {
+    display: flex !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+    width: 200px !important;
+    height: 50px !important;
+    padding-right: 20px !important;
+    padding-left: 20px !important;
+    padding-top: 30px !important;
+    padding-bottom: 30px !important;
+  }
+
+  .btn-back {
+    padding-top: 30px !important;
+    padding-bottom: 30px !important;
+    display: flex !important;
+    align-items: center;
+    background-color: #E1E4EC !important;
+    color: #7682A0 !important;
+  }
+
+  .btn-add {
+    display: flex !important;
+    align-items: center;
+    background-color: #E1E4EC !important;
+    color: #7682A0 !important;
+  }
+
+  .btn-group {
+    margin-top: 40px !important;
+  }
+
+  .btn-delete {
+    color: red !important;
+    border: 0 transparent !important;
+  }
+
+  .icon-delete {
+    font-size: 16px !important;
+  }
+
+  .text-sm {
+    font-size: 14px !important;
+  }
+
+  
+
+  .text-container {
+    color: #7682A0;
+    font-size: 14px;
+  }
+
+  .package-form .ant-form-item-label label {
+    font-size: 12px !important;
+    color: #7682A0 !important;
+  }
+
+  .package-list {
+    margin-top: 10px !important;
+    background-color: #FFF;
+    border-width: 1px;
+    border-style: solid;
+    border-color: #3EBF5B !important;
+    border-radius: 10px !important;
+    padding: 20px !important;
+  }
