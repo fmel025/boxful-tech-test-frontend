@@ -37,6 +37,7 @@ export default function DetailsForm({
         initialValues={initialData}
       >
         {states.length > 0 && <StateSelector states={states} />}
+        
       </Form>
     </>
   );
