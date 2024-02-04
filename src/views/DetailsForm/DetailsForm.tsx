@@ -8,7 +8,7 @@ export default function DetailsForm({
   onSubmit,
 }: {
   initialData: Details;
-  onSubmit: any;
+  onSubmit: ((values: any) => void);
 }) {
   return (
     <>

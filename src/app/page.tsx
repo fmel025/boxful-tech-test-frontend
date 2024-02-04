@@ -14,9 +14,9 @@ export default function Home() {
   const [step, setStep] = useState<number>(1);
   const [details, setDetails] = useState<Details>(initialDetails);
 
-  const onNextStepClick = (formData: object) => {
-    console.log(formData);
-    setDetails(details => ({...details, ...formData}));
+  const onNextStepClick = (values: object) => {
+    console.log(values);
+    setDetails(details => ({...details, ...values}));
     setStep((step) => step + 1);
   };
 
