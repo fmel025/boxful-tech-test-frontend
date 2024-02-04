@@ -25,7 +25,10 @@ export function PersonalDataInputs() {
         <Form.Item
           name="email"
           label="Correo Electrónico"
-          rules={[{ required: true, message: "" }]}
+          rules={[
+            { required: true, message: "" },
+            { type: "email", message: "Ingresa un correo valido" },
+          ]}
         >
           <Input placeholder="Ingrese su email" size="large" />
         </Form.Item>
