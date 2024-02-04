@@ -43,6 +43,10 @@ export default function PackageListForm({
     setPackages(filteredPackages);
   };
 
+  const handleSubmit = () => {
+    onSubmit(packages);
+  }
+
   return (
     <div className="container">
       <p className="text-container">Agrega tus bultos</p>
@@ -81,7 +85,7 @@ export default function PackageListForm({
           <ArrowLeftOutlined />
           <span>Anterior </span>
         </Button>
-        <Button size="large" className="btn-send" type="primary">
+        <Button onClick={handleSubmit} size="large" className="btn-send" type="primary">
           <span>Enviar </span>
           <ArrowRightOutlined />
         </Button>
