@@ -5,6 +5,7 @@ import "./Details.css";
 import { StateSelector } from "./components/StateSelector";
 import { State } from "@/interfaces/state.interface";
 import { fetchStates } from "@/services";
+import { IndicationsInput } from "./components/IndicationsInput";
 
 export default function DetailsForm({
   initialData,
@@ -37,7 +38,7 @@ export default function DetailsForm({
         initialValues={initialData}
       >
         {states.length > 0 && <StateSelector states={states} />}
-        
+        <IndicationsInput />
       </Form>
     </>
   );
