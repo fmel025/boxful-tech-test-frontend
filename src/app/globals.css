@@ -1,3 +1,7 @@
+:root {
+  --titles-color: #4D5568;
+}
+
 * {
   box-sizing: border-box;
   padding: 0;
@@ -17,4 +21,23 @@ a {
 
 body {
   background-color: #F5F5F5;
+}
+
+.title {
+  color: var(--titles-color);
+  font-size: 24px;
+  line-height: 32px;
+}
+
+.title-text {
+  color: var(--titles-color);
+  margin: 5px 0;
+  font-size: 14px;
+}
+
+.form {
+  padding: 60px 40px 0 !important;
+  background-color: #FFF;
+  margin-top: 20px !important;
+  border-radius: 10px;
 }
