@@ -16,11 +16,6 @@ export default function Home() {
   const [details, setDetails] = useState<Details>(initialDetails);
   const [packages, setPackages] = useState<PackageItem[]>([]);
 
-  // For debugging purposes
-  // useEffect(() => {
-  //   console.log(details);
-  // }, [details]);
-
   const onNextStepClick = (values: object) => {
     console.log(values);
     setDetails((details) => ({ ...details, ...values }));
