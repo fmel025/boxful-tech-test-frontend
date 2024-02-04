@@ -50,7 +50,7 @@ export default function DetailsForm({
       <Form
         layout="vertical"
         className="form"
-        onFinish={(data) => console.log(data)}
+        onFinish={onSubmit}
         initialValues={initialData}
       >
         {states.length > 0 && <CollectionAndDate />}

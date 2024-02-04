@@ -2,7 +2,7 @@
 
 import { Layout } from "antd";
 import { MainHeader } from "@/components";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import DetailsForm from "@/views/DetailsForm/DetailsForm";
 import PackageListForm from "@/views/PackageListForm/PackageListForm";
 import { Details } from "@/interfaces/details.interface";
@@ -13,6 +13,12 @@ const { Content } = Layout;
 export default function Home() {
   const [step, setStep] = useState<number>(1);
   const [details, setDetails] = useState<Details>(initialDetails);
+
+
+  // For debugging purposes
+  // useEffect(() => {
+  //   console.log(details);
+  // }, [details]);
 
   const onNextStepClick = (values: object) => {
     console.log(values);
