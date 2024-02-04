@@ -1,5 +1,5 @@
 import { Form, Input, Select, Row, Col } from "antd";
-import { State } from "../../../interfaces/state.interface";
+import { State } from "../../../../interfaces/state.interface";
 import { useState } from "react";
 
 export function StateSelector({ states }: { states: State[] }) {

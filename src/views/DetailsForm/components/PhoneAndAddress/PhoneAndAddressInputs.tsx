@@ -2,7 +2,7 @@ import { FaLocationDot } from "react-icons/fa6";
 import "./PhoneAndAddress.css";
 import { PhoneInput } from "../PhoneInput/PhoneInput";
 import { Col, Flex, Row } from "antd";
-import { DestinationInput } from "../DestinationInput";
+import { DestinationInput } from "../DestinationInput/DestinationInput";
 
 export function PhoneAndAddressInputs() {
   return (

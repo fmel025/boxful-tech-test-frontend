@@ -2,11 +2,11 @@ import { useEffect, useState } from "react";
 import { Details } from "../../interfaces/details.interface";
 import { Form, Input, DatePicker, Flex, Button } from "antd";
 import "./Details.css";
-import { StateSelector } from "./components/StateSelector";
+import { StateSelector } from "./components/StateSelector/StateSelector";
 import { State } from "@/interfaces/state.interface";
 import { fetchStates } from "@/services";
-import { IndicationsInput } from "./components/IndicationsInput";
-import { PersonalDataInputs } from "./components/PersonalDataInputs";
+import { IndicationsInput } from "./components/IndicationsInput/IndicationsInput";
+import { PersonalDataInputs } from "./components/PersonalDataInputs/PersonalDataInputs";
 import { PhoneAndAddressInputs } from "./components/PhoneAndAddress/PhoneAndAddressInputs";
 import { ArrowRightOutlined } from "@ant-design/icons";
 
